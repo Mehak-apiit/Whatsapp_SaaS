@@ -1,0 +1,28 @@
+{
+  "name": "whatsapp-saas",
+  "version": "1.0.0",
+  "description": "\"# AI_Career_Coach\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mehak-apiit/AI_Career_Coach.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Mehak-apiit/AI_Career_Coach/issues"
+  },
+  "homepage": "https://github.com/Mehak-apiit/AI_Career_Coach#readme",
+  "devDependencies": {
+    "express": "^5.2.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}
