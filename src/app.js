@@ -4,7 +4,7 @@ import apiRouter from "../src/routes/index.js";
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 //http://localhost:4001/api
-apiRouter.use("/api", apiRouter);
+app.use("/api", apiRouter);
 //global error handling
 app.use((err,req,res,next)=> {
     console.error(err.stack)

@@ -1,4 +1,5 @@
 import AuthService from "../services/auth.service.js"
+//const authService = new AuthService();
 const authService = new AuthService();
 
 class AuthController {
@@ -16,7 +17,7 @@ class AuthController {
     async login(req, res) {
         try {
             const user = await authService.login(req.body);
-            res.status(200).json({ sucees: true, data: user });
+            res.status(200).json({ success: true, data: user });
         } catch (error) {
             res.status(500).json({ message: error.message });
         }
