@@ -14,6 +14,15 @@ class UserRepository extends CrudRepository {
             throw error;
         }
     }
+    async findByIdentifier(identifier){
+        return await User.findOne({
+            $or:[
+                {email: identifier},
+                {phone: identifier},
+                {userId: identifier},
+            ]
+        });
+    }
 }
 
 export default UserRepository;

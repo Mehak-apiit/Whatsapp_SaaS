@@ -2,9 +2,15 @@
 class AuthValidator{
     async validateRegisterRequest(req,res,next){
         try{
-            const {email,password} = req.body;
+            const {name,email,phone,userId,password} = req.body;
             if(!email){
                 res.status(400).json({message:"Email is required"});
+            }
+            if(!phone){
+                res.status(400).json({message:"Phone is required"});
+            }
+            if(!userId){
+                res.status(400).json({message:"UserId is required"});
             }
             if(!password){
                 res.status(400).json({message:"Password is required"});
@@ -16,9 +22,9 @@ class AuthValidator{
     }
     async validateLoginRequest(req,res,next){
         try{
-            const {email,password} = req.body;
-            if(!email){
-                res.status(400).json({message:"Email is required"});
+            const {identifier,password} = req.body;
+            if(!identifier){
+                res.status(400).json({message:"identifier is required"});
             }
             if(!password){
                 res.status(400).json({message:"Password is required"});

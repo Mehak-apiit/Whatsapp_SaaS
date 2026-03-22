@@ -15,9 +15,11 @@ class AuthService {
         const { password } = data;
         const hashPassword = await bcrypt.hash(password, 10);
         const userData = {
+            name: data.name || "",
             email: data.email,
+            phone: data.phone,
+            userId: data.userId,
             password: hashPassword,
-            name: data.name || ''
         };
 
         const user = await userRepository.create(userData);
@@ -25,7 +27,8 @@ class AuthService {
     }
 
     async login(data) {
-        const user = await userRepository.findByEmail(data.email);
+        const identifier = data.identifier;
+        const user = await userRepository.findByIdentifier(identifier);
         if (!user) {
             throw new Error("User not found");
         }
