@@ -12,14 +12,17 @@ class AuthService {
             throw new Error("Email already exists");
         }
 
-        const { password } = data;
-        const hashPassword = await bcrypt.hash(password, 10);
+        //const { password } = data;
+        //const hashPassword = await bcrypt.hash(password, 10);
         const userData = {
+            firstName: data.firstName,
+            lastName: data.lastName,
             name: data.name || "",
             email: data.email,
             phone: data.phone,
             username: data.username,
-            password: hashPassword,
+            password: data.password,
+        
         };
 
         const user = await userRepository.create(userData);
@@ -33,10 +36,10 @@ class AuthService {
             throw new Error("User not found");
         }
 
-        const isMatchPassword = await bcrypt.compare(data.password, user.password);
-        if (!isMatchPassword) {
-            throw new Error("Invalid password");
-        }
+        // const isMatchPassword = await bcrypt.compare(data.password, user.password);
+        // if (!isMatchPassword) {
+        //     throw new Error("Invalid password");
+        // }
 
         const token = await jwtUtil.jwtEncrypt({ id: user.id, email: user.email });
         return { token };

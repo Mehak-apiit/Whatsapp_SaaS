@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import STATUS_TYPE from "../utils/enums";
+import bcrypt from "bcrypt";
+import STATUS_TYPE from "../utils/enums.js";
 
 const userSchema = new mongoose.Schema({
     firstName: {
