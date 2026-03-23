@@ -19,7 +19,7 @@ class UserRepository extends CrudRepository {
             $or:[
                 {email: identifier},
                 {phone: identifier},
-                {userId: identifier},
+                {username: identifier},
             ]
         });
     }

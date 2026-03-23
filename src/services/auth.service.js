@@ -18,7 +18,7 @@ class AuthService {
             name: data.name || "",
             email: data.email,
             phone: data.phone,
-            userId: data.userId,
+            username: data.username,
             password: hashPassword,
         };
 
