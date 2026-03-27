@@ -35,6 +35,9 @@ class AuthService {
         if (!user) {
             throw new Error("User not found");
         }
+        if(!user.isEmailVerified){
+            throw new Error("User email not verified found");
+        }
 
         // const isMatchPassword = await bcrypt.compare(data.password, user.password);
         // if (!isMatchPassword) {
