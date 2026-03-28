@@ -28,7 +28,7 @@ const sendEmail = async (email, subject, template, data) => {
         from: process.env.EMAIL_USER,
         to: email,
         subject: subject,
-        text: data.content
+        html: template
     };
 
     try {

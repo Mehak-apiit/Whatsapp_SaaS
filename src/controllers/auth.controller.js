@@ -6,8 +6,8 @@ class AuthController {
     async register(req, res, next) {
         try {
             // console.log(req.body);
-            const user = await authService.register(req.body);
-            res.status(201).json(user);
+            const {user,token} = await authService.register(req.body);
+            res.status(201).json({success:true,message:`Please check your email ${user.email} to activate your account`,token});
         } catch (error) {
             console.log(error)
             res.status(500).json({ message: error });
