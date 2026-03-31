@@ -39,10 +39,15 @@ class AuthService {
             const { token, activationCode } = await createActivationToken(user);
 
             //const emailData = { user: { name: `${user.firstName} ${user.lastName} ` }, acivationCode: activationCode }
+            const baseUrl = process.env.BASE_URL || "http://localhost:4001";
+            const activationLink = `${baseUrl}/api/v1/activation/activate?activationToken=${token}&activationCode=${activationCode}`;
             const emailData = {
                 user: { name: `${user.firstName} ${user.lastName} ` },
-                activationCode: activationCode
+                activationCode: activationCode,
+                activationLink: activationLink
+
             }
+
             const html = await ejs.renderFile(path.join(__dirname, "../mails/activation-mail.ejs"), emailData);
 
             // 
