@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Check Connection</h3>
+
+<script src="http://localhost:4001/socket.io/socket.io.js"></script>
+
+<script>
+  const socket = io("http://localhost:4001");
+
+  socket.on("connect", () => {
+    console.log("User connected:", socket.id);
+  });
+</script>
+
+</body>
+</html>
