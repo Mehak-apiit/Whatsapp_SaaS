@@ -1,4 +1,4 @@
-# AI_Career_Coach (Whatsapp-Saas Backend)
+# Whatsapp-Saas Backend system
 
 Backend service built with **Node.js (Express)** and **Socket.IO**. It provides user authentication/activation APIs and a protected profile endpoint.
 
