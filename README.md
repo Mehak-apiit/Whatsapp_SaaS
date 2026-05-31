@@ -124,7 +124,7 @@ Server behavior:
 ## Notes / Known Issues
 - Global error handler in `src/app.js` sends:
   ```json
-  { "message": "Something went wrong!" }
+  { "message": "Something went wrong! Try again" }
   ```
 
 ## License
